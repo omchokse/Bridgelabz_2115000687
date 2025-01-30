@@ -22,6 +22,7 @@ public class gcdCalculator {
         int num1 = scanner.nextInt();
         System.out.print("Enter second number: ");
         int num2 = scanner.nextInt();
+        scanner.close();
 
         int gcdResult = gcd(num1, num2);
         int lcmResult = lcm(num1, num2);

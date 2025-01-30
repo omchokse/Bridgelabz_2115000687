@@ -6,24 +6,23 @@ public class ToggleCase {
         System.out.print("Enter a string: ");
         String input = scanner.nextLine();
         scanner.close();
-        
+
         String toggledString = toggleCase(input);
         System.out.println("String after toggling case: " + toggledString);
     }
-    
+
     public static String toggleCase(String str) {
-        StringBuilder sb = new StringBuilder();
-        
-        for (char ch : str.toCharArray()) {
+        char[] charArray = str.toCharArray();
+
+        for (int i = 0; i < charArray.length; i++) {
+            char ch = charArray[i];
             if (Character.isUpperCase(ch)) {
-                sb.append(Character.toLowerCase(ch));
+                charArray[i] = Character.toLowerCase(ch);
             } else if (Character.isLowerCase(ch)) {
-                sb.append(Character.toUpperCase(ch));
-            } else {
-                sb.append(ch);
+                charArray[i] = Character.toUpperCase(ch);
             }
         }
-        
-        return sb.toString();
+
+        return new String(charArray);
     }
 }
